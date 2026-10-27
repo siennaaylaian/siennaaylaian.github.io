@@ -5,16 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sienna Aylaian · Product</title>
 <meta name="description" content="Sienna Aylaian: product management portfolio. Quantitative Social Science, Dartmouth '28.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
 <style>
 /* Light only. Teal accent + swirl ornament are a nod to the main portfolio. */
 :root{
   color-scheme:light;
-  --bg:#ffffff; --surface:#f4f8f8; --surface-2:#e7f0f0; --border:#dde6e7;
-  --text:#14201f; --muted:#4a5857; --subtle:#6a7877;
-  --accent:#1d6467; --accent-soft:#e3f0ef; --aqua:#cfeaea;
+  --bg:#ffffff; --surface:#eef5f5; --surface-2:#dcebeb; --border:#c5d4d5;
+  --text:#0a1413; --muted:#2c3a39; --subtle:#4b5a59;
+  --accent:#11494c; --accent-soft:#d9ecea; --aqua:#bfe2e2;
   --radius:4px; --serif:"Newsreader",Georgia,serif; --max:1080px; --gutter:24px;
 }
 /* Swirl ornament, tinted via mask so it can take any color */
@@ -22,7 +24,7 @@
   -webkit-mask:url(assets/swirl.png) center/contain no-repeat;mask:url(assets/swirl.png) center/contain no-repeat}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--text);font:15.5px/1.65 "Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 "Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 img{max-width:100%;display:block}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
@@ -43,10 +45,10 @@ nav.main a:hover{color:var(--text)}
 
 /* hero */
 .hero-bg{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--aqua) 0%,#eef7f7 38%,var(--bg) 100%);margin-bottom:0}
-.hero-bg .o1{width:340px;height:340px;top:-40px;right:-60px;opacity:.16}
-.hero-bg .o2{width:260px;height:260px;bottom:-20px;left:-70px;opacity:.12;transform:scale(-1,-1)}
+.hero-bg .o1{width:340px;height:340px;top:-40px;right:-60px;opacity:.22}
+.hero-bg .o2{width:260px;height:260px;bottom:-20px;left:-70px;opacity:.18;transform:scale(-1,-1)}
 .hero{position:relative;padding:80px 0 64px;display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:center}
-.eyebrow{font-size:13px;font-weight:500;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px}
+.eyebrow{font-size:14px;font-weight:500;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px}
 .hero h1{font-size:clamp(30px,3.8vw,40px);line-height:1.15;margin-bottom:18px}
 .hero p.lede{font-size:16.5px;color:var(--muted);max-width:600px;margin:0 0 28px}
 .hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
@@ -66,7 +68,7 @@ section.block{padding:64px 0;border-top:1px solid var(--border)}
 .metric{padding:22px 22px 20px;border-right:1px solid var(--border)}
 .metric:last-child{border-right:0}
 .metric b{display:block;font-size:26px;line-height:1.15;color:var(--accent)}
-.metric span{display:block;font-size:13.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+.metric span{display:block;font-size:14.5px;color:var(--muted);margin-top:4px;line-height:1.45}
 
 /* project cards */
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
@@ -76,16 +78,16 @@ section.block{padding:64px 0;border-top:1px solid var(--border)}
 .card .thumb img{width:100%;height:100%;object-fit:cover}
 .card .thumb.contain img{object-fit:contain;padding:16px 0 0;object-position:50% 0}
 .card .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
-.card .org{font-size:13px;color:var(--subtle)}
-.card h3{font-size:17px;font-weight:600;line-height:1.3}
-.card p{margin:0;color:var(--muted);font-size:14.5px}
+.card .org{font-size:14px;font-weight:500;color:var(--subtle)}
+.card h3{font-size:18px;font-weight:600;line-height:1.3}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
 .card .result{margin-top:auto;padding-top:12px;border-top:1px solid var(--border);font-size:14px;color:var(--text)}
 .card .result{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.card .result div{font-size:12.5px;line-height:1.35;color:var(--muted)}
+.card .result div{font-size:13.5px;line-height:1.35;color:var(--muted)}
 .card .result strong{display:block;font-family:var(--serif);font-weight:500;font-size:19px;color:var(--accent);margin-bottom:2px}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-size:12px;font-weight:500;padding:2px 8px;border-radius:2px;background:var(--surface-2);color:var(--muted)}
-.subhead{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--subtle);margin:40px 0 16px}
+.tag{font-size:13px;font-weight:500;padding:3px 9px;border-radius:2px;background:var(--surface-2);color:var(--muted)}
+.subhead{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--subtle);margin:40px 0 16px}
 .subhead:first-of-type{margin-top:0}
 
 /* experience */
@@ -109,13 +111,13 @@ section.block{padding:64px 0;border-top:1px solid var(--border)}
 .sec-head h2::after{content:"";display:block;width:36px;height:2px;background:var(--accent);margin-top:10px;border-radius:2px}
 .metrics{background:var(--bg)}
 .contact{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--accent-soft),var(--surface));border:1px solid var(--border);border-radius:var(--radius);padding:40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-.contact .o4{width:200px;height:200px;right:-40px;top:-50px;opacity:.14}
+.contact .o4{width:200px;height:200px;right:-40px;top:-50px;opacity:.2}
 .contact > div{position:relative}
 .cs-top{position:relative;overflow:hidden;background:linear-gradient(180deg,#eaf5f5 0%,var(--bg) 100%)}
-.cs-top .o5{width:280px;height:280px;top:-50px;right:-50px;opacity:.14}
+.cs-top .o5{width:280px;height:280px;top:-50px;right:-50px;opacity:.2}
 .contact h2{font-size:26px;margin-bottom:6px}
 .contact p{margin:0;color:var(--muted)}
-footer{padding:32px 0 48px;color:var(--subtle);font-size:13px}
+footer{padding:32px 0 48px;color:var(--subtle);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 /* case study */
@@ -126,12 +128,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .cs-head p{font-size:16.5px;color:var(--muted);margin:0}
 .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:40px}
 .fact{padding:16px 16px 16px 0}
-.fact dt{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--subtle);margin-bottom:4px}
+.fact dt{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--subtle);margin-bottom:4px}
 .fact dd{margin:0;font-size:14px}
 .tldr{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
 .tldr div{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
-.tldr h3{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:8px}
-.tldr p{margin:0;font-size:14.5px;color:var(--text)}
+.tldr h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:8px}
+.tldr p{margin:0;font-size:15.5px;color:var(--text)}
 .cs-links{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px}
 .cs-body{max-width:780px}
 .cs-body h2{font-size:24px;margin:48px 0 14px;padding-top:24px;border-top:1px solid var(--border)}
@@ -142,10 +144,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .cs-body li{margin:6px 0}
 .cs-body .metrics{margin:8px 0 24px}
 .cs-body blockquote{margin:20px 0;padding:4px 0 4px 20px;border-left:2px solid var(--accent);color:var(--text);font-size:19px;line-height:1.45;font-style:italic}
-.cs-body blockquote cite{display:block;margin-top:8px;font-size:13.5px;font-style:normal;font-family:"Hanken Grotesk",system-ui,sans-serif;color:var(--subtle)}
-.table{width:100%;border-collapse:collapse;font-size:14.5px;margin:4px 0 24px}
+.cs-body blockquote cite{display:block;margin-top:8px;font-size:14px;font-style:normal;font-family:"Instrument Sans",system-ui,sans-serif;color:var(--subtle)}
+.table{width:100%;border-collapse:collapse;font-size:15.5px;margin:4px 0 24px}
 .table th,.table td{text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--border);vertical-align:top}
-.table th{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--subtle)}
+.table th{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--subtle)}
 .table td{color:var(--muted)}
 .table td:first-child{color:var(--text);font-weight:500}
 .figs{display:grid;gap:16px;margin:8px 0 28px}
@@ -158,13 +160,18 @@ figure .frame{background:var(--surface);border:1px solid var(--border);border-ra
 .figs.phone figure .frame{padding:16px}
 .figs.phone img{max-height:440px;width:auto}
 figure img{cursor:zoom-in}
-figcaption{font-size:13px;color:var(--subtle);margin-top:8px;line-height:1.45}
+figcaption{font-size:14px;color:var(--subtle);margin-top:8px;line-height:1.45}
 .pager{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:64px 0 0;padding-top:32px;border-top:1px solid var(--border)}
 .pager a{display:block;padding:18px 20px;border:1px solid var(--border);border-radius:var(--radius);text-decoration:none}
 .pager a:hover{background:var(--surface)}
-.pager small{display:block;font-size:12px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.pager small{display:block;font-size:13px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
 .pager .next{text-align:right;grid-column:2}
 
+/* résumé viewer */
+.rv-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;padding:8px 0 24px}
+.rv-head h1{font-size:clamp(28px,3.4vw,36px)}
+.rv-page{background:#fff;border:1px solid var(--border);box-shadow:0 8px 28px rgba(10,20,19,.10);max-width:860px;margin:0 auto 64px}
+.rv-page img{width:100%;height:auto}
 .lb{position:fixed;inset:0;background:rgba(10,12,16,.86);display:none;align-items:center;justify-content:center;padding:24px;z-index:50;cursor:zoom-out}
 .lb.on{display:flex}
 .lb img{max-width:100%;max-height:100%;border-radius:2px}
@@ -205,7 +212,7 @@ figcaption{font-size:13px;color:var(--subtle);margin-top:8px;line-height:1.45}
       <a href="#/work">Work</a>
       <a href="#/experience" class="hide-sm">Experience</a>
       <a href="#/about" class="hide-sm">About</a>
-      <a href="assets/62307bdded9d6a15.pdf" target="_blank" rel="noopener">Résumé</a>
+      <a href="#/resume">Résumé</a>
       <a href="#/contact">Contact</a>
     </nav>
   </div>
@@ -226,6 +233,7 @@ figcaption{font-size:13px;color:var(--subtle);margin-top:8px;line-height:1.45}
 const EMAIL = 'sienna.aylaian@gmail.com';
 const LINKEDIN = 'https://www.linkedin.com/in/sienna-aylaian-b21998273/';
 const RESUME = 'assets/sienna-aylaian-resume-pm.pdf';
+const RESUME_IMG = 'assets/resume-pm.png';
 const A = f => 'assets/' + f;
 
 /* Case studies. Block types: h, p, ul, quote, metrics, table, figs */
@@ -397,40 +405,6 @@ const PROJECTS = [
   ]
 },
 {
-  id:'dali-closet', group:'product',
-  org:'DALI Lab application challenge · January 2025',
-  title:'Campus closet exchange: one week from prompt to prototype',
-  summary:'Solo challenge: identify a community gap, define the problem, prioritize features, and deliver an interactive prototype in seven days.',
-  cover:A('c7b055547aaf96bb.png'), coverContain:true,
-  tags:['Prioritization','Competitive analysis','Solo'],
-  result:[['1 week','prompt to interactive prototype'],['4','must-have features scoped'],['~30%','DALI acceptance rate; accepted']],
-  facts:{Role:'Solo: research, product, design', Team:'Individual', Timeline:'1 week', Tools:'Figma, FigJam'},
-  tldr:{
-    Problem:'Students buy clothing for one-off events while closets down the hall sit unused, adding cost and social pressure.',
-    Approach:'User conversations and a competitive audit of Depop, Mercari, and Poshmark, then a tiered feature prioritization before any design.',
-    Outcome:'A full interactive prototype covering search, filtering, listings, and trust mechanics. Earned acceptance to DALI Lab.'
-  },
-  links:[['Interactive prototype','https://www.figma.com/proto/g4MKCZq1xHB7k9bbpGKroc/DALI-UI?node-id=1-697&p=f&t=J'],['Research board','https://www.figma.com/board/0ldzW75u5UHFdZa6ZEgRW8/DALI-UX---Sienna?node-id=0-1&']],
-  body:[
-    {t:'h',x:'Prompt'},
-    {t:'quote',x:'Identify a gap that exists between seeking and finding community in everyday life, and design a solution to help bring people together.',c:'DALI Lab UI/UX Design Challenge brief'},
-    {t:'h',x:'Users and problem'},
-    {t:'ul',x:['<strong>Primary:</strong> students who want affordable, event-appropriate clothing for a specific occasion.','<strong>Secondary:</strong> students with unused clothing who want to earn from it or connect with their community.']},
-    {t:'quote',x:'How might we transform underused clothing on campus into a shared resource that reduces financial and social barriers and helps students feel confident at events?',c:'Problem statement'},
-    {t:'h',x:'Prioritization'},
-    {t:'p',x:'I sorted every feature idea into tiers before sketching, so the one-week build focused on what the core use case required.'},
-    {t:'table',head:['Tier','Features'],rows:[
-      ['Must have','Event-based search; location tags by dorm cluster; Dartmouth-only access; discounted term-long rentals.'],
-      ['Nice to have','A “looks” tab showing how pieces are styled; community vouches for higher-stakes items.'],
-      ['Stretch','Cost-per-wear and environmental impact dashboard; natural-language AI search.']
-    ]},
-    {t:'h',x:'Solution'},
-    {t:'figs',cols:4,phone:true,items:[[A('c7b055547aaf96bb.png'),'Home and search, with an assistant for undecided users.'],[A('e4f4ca9c6dcd9447.png'),'Filter overlay.'],[A('3e53a79ba9a3420a.png'),'Results show rent and buy side by side.'],[A('cf9cc8e14a1bc516.png'),'Seller profile, addressing the trust gap from interviews.']]},
-    {t:'h',x:'Outcome'},
-    {t:'p',x:'In one week I went from a single-word prompt to a research-backed problem statement, a prioritized feature set, and a full interactive prototype. I was accepted to DALI Lab and have worked there since.'}
-  ]
-},
-{
   id:'parkinsons-aesthetics', group:'research',
   org:'Dartmouth Empower Lab · 2025',
   title:'Survey research informing the design of a new Parkinson’s center',
@@ -501,11 +475,7 @@ const EXPERIENCE = [
   {when:'Jan – Mar 2027', role:'Incoming Commercial Intern', org:'U.S. Embassy Lima · U.S. Department of Commerce', pts:['Will join client meetings with U.S. companies entering Peru, capturing requirements and translating them into research briefs for commercial specialists.','Will conduct market, competitive, stakeholder, and user research across mining, energy, and aerospace.']},
   {when:'Jun 2026 – Present', role:'Product Designer', org:'DALI Lab · Evergreen', pts:['Drive product strategy and roadmap for Evergreen, an AI wellness platform serving 600+ Dartmouth students.','Design data-visualization dashboards that translate student health metrics into product decisions.','Present deliverables to Evergreen leadership in weekly client meetings, scoping and iterating.']},
   {when:'May – Aug 2026', role:'Founding Product Designer', org:'LavaHire', pts:['Built from an empty repo to a live production MVP, owning design, product roadmap, and product strategy.','Designed and shipped 5+ full-stack features from Figma wireframes and written specs through implementation, including an AI-integrated two-stage questionnaire system.','Established the Figma design system (color tokens, light/dark theming, typography) and authored spec docs (flow diagrams, decision logs) aligning scope with engineering delivery.']},
-  {when:'Jan 2026 – Present', role:'Social Impact Nonprofit Consultant', org:'Assistive Technology New Hampshire (UNH Institute on Disability)', pts:['Designed an inclusive, youth-centered accessibility challenge for an organization serving 2,800+ individuals annually.','Produced a 25-page client-ready report on outreach strategy, user research, and implementation recommendations.']},
   {when:'Sep 2025 – Present', role:'Design Consultant Analyst', org:'Design Initiative at Dartmouth', pts:['Drove curriculum changes for the Spanish & Portuguese Department, reaching 300+ students annually.','Synthesized 30+ student interviews into a mentorship program adopted department-wide, serving 60+ students per term.']},
-  {when:'Nov – Dec 2025', role:'Intern', org:'StreetCode Academy', pts:['Worked cross-functionally with executives at a tech education nonprofit serving 5,000+ students per year.','Designed and built a webpage on AI awareness; helped distribute 200 free computers to families.']},
-  {when:'Jan – Jun 2025', role:'Research Intern', org:'Women in Science Project · Dartmouth Empower Lab', pts:['Built custom Qualtrics surveys (HTML/CSS) capturing 40+ patient responses.','Applied ANOVA in R to patient-preference data to inform design specs for a Parkinson’s center in New York serving 1,000+ patients.']},
-  {when:'Sep 2021 – Present', role:'State Data Analyst & Lead Programs Coordinator', org:'AAUW Tech Trek', pts:['Direct California data strategy for a statewide STEM initiative reaching 10,000+ students annually.','Built a 16,000-record alumnae database in Python and Caspio, replacing manual tracking across branches.','Designed and taught STEM curriculum to 250+ students across 4 campuses.']}
 ];
 
 const esc = s => String(s);
@@ -540,7 +510,7 @@ function home(){
         <p class="lede">Quantitative Social Science at Dartmouth (’28), with minors in Human-Centered Design and Spanish. I’ve taken a product from empty repo to production, run research that changed a department’s policy, and set roadmap for an AI platform used by 600+ students. Incoming Commercial Intern at the U.S. Embassy in Lima (Jan 2027).</p>
         <div class="ctas">
           <a class="btn primary" href="#/work">View case studies</a>
-          <a class="btn" href="${RESUME}" target="_blank" rel="noopener">Download résumé</a>
+          <a class="btn" href="#/resume">View résumé</a>
         </div>
       </div>
       <div class="portrait-wrap"><span class="ornament o3"></span><div class="portrait"><img src="${A('1a35ee55e937e613.jpg')}" alt="Sienna Aylaian"></div></div>
@@ -552,7 +522,7 @@ function home(){
       ['5+ features','Shipped to a production MVP at LavaHire in 10 weeks: 95 commits, 111 tests, built from an empty repo'],
       ['60+ / term','Students served by a mentorship program adopted department-wide, built from 30+ interviews and 2 pilots'],
       ['600+','Dartmouth students on Evergreen, the AI wellness platform whose roadmap I help drive at DALI'],
-      ['10,000+','Students reached annually by the statewide STEM program whose California data strategy I direct']
+      ['1,000+','Patients at a New York Parkinson’s center whose design specs my survey research informed']
     ])}
   </div>
 
@@ -568,7 +538,7 @@ function home(){
 
   <section class="block" id="experience">
     <div class="wrap">
-      <div class="sec-head"><div><h2>Experience</h2></div><a class="btn" href="${RESUME}" target="_blank" rel="noopener">Full résumé (PDF)</a></div>
+      <div class="sec-head"><div><h2>Experience</h2></div><a class="btn" href="#/resume">Full résumé</a></div>
       <div class="exp">${EXPERIENCE.map(e=>`
         <div class="exp-row">
           <div class="exp-when">${e.when}</div>
@@ -645,11 +615,27 @@ function study(p){
   </div>`;
 }
 
+function resume(){
+  return `<div class="cs-top"><span class="ornament o5"></span><div class="wrap" style="position:relative">
+    <a class="cs-back" href="#/">← Back to home</a>
+    <div class="rv-head">
+      <div><div class="eyebrow">Résumé</div><h1>Sienna Aylaian</h1></div>
+      <a class="btn primary" href="${RESUME}" download="Sienna Aylaian - Resume.pdf">Download PDF</a>
+    </div></div></div>
+  <div class="wrap"><div class="rv-page"><img src="${RESUME_IMG}" alt="Sienna Aylaian résumé"></div></div>`;
+}
+
 let lastView = '';
 function route(){
   const h = location.hash.replace(/^#\/?/,'');
   const m = h.match(/^work\/(.+)$/);
   const p = m && PROJECTS.find(x=>x.id===m[1]);
+  if(h==='resume'){
+    $app.innerHTML = resume(); lastView = 'resume';
+    document.title = 'Résumé · Sienna Aylaian';
+    window.scrollTo(0,0);
+    return;
+  }
   if(p){
     $app.innerHTML = study(p); lastView = 'study';
     document.title = p.title + ' · Sienna Aylaian';
