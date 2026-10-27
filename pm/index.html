@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sienna Aylaian · Product</title>
+<meta name="description" content="Sienna Aylaian: product management portfolio. Quantitative Social Science, Dartmouth '28.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+/* Light only. Teal accent + swirl ornament are a nod to the main portfolio. */
+:root{
+  color-scheme:light;
+  --bg:#ffffff; --surface:#f4f8f8; --surface-2:#e7f0f0; --border:#dde6e7;
+  --text:#14201f; --muted:#4a5857; --subtle:#6a7877;
+  --accent:#1d6467; --accent-soft:#e3f0ef; --aqua:#cfeaea;
+  --radius:4px; --serif:"Newsreader",Georgia,serif; --max:1080px; --gutter:24px;
+}
+/* Swirl ornament, tinted via mask so it can take any color */
+.ornament{position:absolute;pointer-events:none;background:var(--accent);
+  -webkit-mask:url(assets/swirl.png) center/contain no-repeat;mask:url(assets/swirl.png) center/contain no-repeat}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:15.5px/1.65 "Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3{line-height:1.2;letter-spacing:-.01em;margin:0}
+h1,h2,.metric b,blockquote{font-family:var(--serif);font-weight:500!important;letter-spacing:-.005em}
+
+/* header */
+header.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--border)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font-family:var(--serif);font-weight:500;text-decoration:none;font-size:19px}
+nav.main{display:flex;gap:24px;font-size:14px}
+nav.main a{text-decoration:none;color:var(--muted)}
+nav.main a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:3px;font-size:14px;font-weight:500;text-decoration:none;border:1px solid var(--border);background:var(--bg);color:var(--text);transition:background .15s,border-color .15s}
+.btn:hover{background:var(--surface)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.btn.primary:hover{filter:brightness(1.1);background:var(--accent)}
+
+/* hero */
+.hero-bg{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--aqua) 0%,#eef7f7 38%,var(--bg) 100%);margin-bottom:0}
+.hero-bg .o1{width:340px;height:340px;top:-40px;right:-60px;opacity:.16}
+.hero-bg .o2{width:260px;height:260px;bottom:-20px;left:-70px;opacity:.12;transform:scale(-1,-1)}
+.hero{position:relative;padding:80px 0 64px;display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:center}
+.eyebrow{font-size:13px;font-weight:500;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px}
+.hero h1{font-size:clamp(30px,3.8vw,40px);line-height:1.15;margin-bottom:18px}
+.hero p.lede{font-size:16.5px;color:var(--muted);max-width:600px;margin:0 0 28px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.portrait-wrap{position:relative}
+.portrait-wrap .o3{width:130px;height:130px;right:-34px;bottom:-34px;opacity:.55}
+.portrait{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background:var(--surface);box-shadow:0 10px 30px rgba(29,100,103,.14)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+
+/* sections */
+section.block{padding:64px 0;border-top:1px solid var(--border)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:32px}
+.sec-head h2{font-size:28px}
+.sec-head p{margin:6px 0 0;color:var(--muted);font-size:15px}
+
+/* metrics */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.metric{padding:22px 22px 20px;border-right:1px solid var(--border)}
+.metric:last-child{border-right:0}
+.metric b{display:block;font-size:26px;line-height:1.15;color:var(--accent)}
+.metric span{display:block;font-size:13.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+
+/* project cards */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.card{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;text-decoration:none;background:var(--bg);transition:border-color .15s,box-shadow .15s}
+.card:hover{border-color:color-mix(in srgb,var(--accent) 40%,var(--border));box-shadow:0 4px 18px rgba(16,24,40,.06)}
+.card .thumb{aspect-ratio:16/9;background:var(--surface);display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid var(--border)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.card .thumb.contain img{object-fit:contain;padding:16px 0 0;object-position:50% 0}
+.card .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card .org{font-size:13px;color:var(--subtle)}
+.card h3{font-size:17px;font-weight:600;line-height:1.3}
+.card p{margin:0;color:var(--muted);font-size:14.5px}
+.card .result{margin-top:auto;padding-top:12px;border-top:1px solid var(--border);font-size:14px;color:var(--text)}
+.card .result{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card .result div{font-size:12.5px;line-height:1.35;color:var(--muted)}
+.card .result strong{display:block;font-family:var(--serif);font-weight:500;font-size:19px;color:var(--accent);margin-bottom:2px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;font-weight:500;padding:2px 8px;border-radius:2px;background:var(--surface-2);color:var(--muted)}
+.subhead{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--subtle);margin:40px 0 16px}
+.subhead:first-of-type{margin-top:0}
+
+/* experience */
+.exp{display:grid;gap:0}
+.exp-row{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:22px 0;border-bottom:1px solid var(--border)}
+.exp-row:first-child{padding-top:0}
+.exp-row:last-child{border-bottom:0}
+.exp-when{font-size:14px;color:var(--subtle)}
+.exp-row h3{font-size:16px;font-weight:600}
+.exp-row .org{color:var(--muted);font-size:15px;margin-top:2px}
+.exp-row ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:15px}
+.exp-row li{margin:4px 0}
+
+/* about */
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:56px}
+.about p{color:var(--muted);margin:0 0 16px}
+.skills{display:grid;gap:20px}
+.skills h3{font-size:14px;font-weight:600;margin-bottom:8px}
+
+/* contact / footer */
+.sec-head h2::after{content:"";display:block;width:36px;height:2px;background:var(--accent);margin-top:10px;border-radius:2px}
+.metrics{background:var(--bg)}
+.contact{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--accent-soft),var(--surface));border:1px solid var(--border);border-radius:var(--radius);padding:40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.contact .o4{width:200px;height:200px;right:-40px;top:-50px;opacity:.14}
+.contact > div{position:relative}
+.cs-top{position:relative;overflow:hidden;background:linear-gradient(180deg,#eaf5f5 0%,var(--bg) 100%)}
+.cs-top .o5{width:280px;height:280px;top:-50px;right:-50px;opacity:.14}
+.contact h2{font-size:26px;margin-bottom:6px}
+.contact p{margin:0;color:var(--muted)}
+footer{padding:32px 0 48px;color:var(--subtle);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* case study */
+.cs-back{display:inline-block;margin:32px 0 0;font-size:14px;color:var(--muted);text-decoration:none}
+.cs-back:hover{color:var(--text)}
+.cs-head{padding:28px 0 32px;max-width:780px}
+.cs-head h1{font-size:clamp(28px,3.4vw,36px);line-height:1.15;margin:0 0 12px}
+.cs-head p{font-size:16.5px;color:var(--muted);margin:0}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:40px}
+.fact{padding:16px 16px 16px 0}
+.fact dt{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--subtle);margin-bottom:4px}
+.fact dd{margin:0;font-size:14px}
+.tldr{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+.tldr div{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+.tldr h3{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:8px}
+.tldr p{margin:0;font-size:14.5px;color:var(--text)}
+.cs-links{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px}
+.cs-body{max-width:780px}
+.cs-body h2{font-size:24px;margin:48px 0 14px;padding-top:24px;border-top:1px solid var(--border)}
+.cs-body h2:first-child{margin-top:0}
+.cs-body p{color:var(--muted);margin:0 0 16px}
+.cs-body p strong,.cs-body li strong{color:var(--text);font-weight:600}
+.cs-body ul{color:var(--muted);padding-left:20px;margin:0 0 16px}
+.cs-body li{margin:6px 0}
+.cs-body .metrics{margin:8px 0 24px}
+.cs-body blockquote{margin:20px 0;padding:4px 0 4px 20px;border-left:2px solid var(--accent);color:var(--text);font-size:19px;line-height:1.45;font-style:italic}
+.cs-body blockquote cite{display:block;margin-top:8px;font-size:13.5px;font-style:normal;font-family:"Hanken Grotesk",system-ui,sans-serif;color:var(--subtle)}
+.table{width:100%;border-collapse:collapse;font-size:14.5px;margin:4px 0 24px}
+.table th,.table td{text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--border);vertical-align:top}
+.table th{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--subtle)}
+.table td{color:var(--muted)}
+.table td:first-child{color:var(--text);font-weight:500}
+.figs{display:grid;gap:16px;margin:8px 0 28px}
+.figs.c1{grid-template-columns:1fr}
+.figs.c2{grid-template-columns:repeat(2,1fr)}
+.figs.c3{grid-template-columns:repeat(3,1fr)}
+.figs.c4{grid-template-columns:repeat(4,1fr)}
+figure{margin:0}
+figure .frame{background:var(--surface);border:1px solid var(--border);border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.figs.phone figure .frame{padding:16px}
+.figs.phone img{max-height:440px;width:auto}
+figure img{cursor:zoom-in}
+figcaption{font-size:13px;color:var(--subtle);margin-top:8px;line-height:1.45}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:64px 0 0;padding-top:32px;border-top:1px solid var(--border)}
+.pager a{display:block;padding:18px 20px;border:1px solid var(--border);border-radius:var(--radius);text-decoration:none}
+.pager a:hover{background:var(--surface)}
+.pager small{display:block;font-size:12px;color:var(--subtle);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.pager .next{text-align:right;grid-column:2}
+
+.lb{position:fixed;inset:0;background:rgba(10,12,16,.86);display:none;align-items:center;justify-content:center;padding:24px;z-index:50;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;border-radius:2px}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:32px;padding:48px 0 48px}
+  .portrait-wrap{max-width:280px;order:-1}
+  .portrait{aspect-ratio:1}
+  .hero-bg .o1{width:220px;height:220px}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .metric:nth-child(2){border-right:0}
+  .metric:nth-child(-n+2){border-bottom:1px solid var(--border)}
+  .cards{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr;gap:32px}
+  .exp-row{grid-template-columns:1fr;gap:4px}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .tldr{grid-template-columns:1fr}
+  .figs.c3,.figs.c4{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:560px){
+  :root{--gutter:16px}
+  nav.main{gap:16px}
+  nav.main a.hide-sm{display:none}
+  .figs.c2{grid-template-columns:1fr}
+  .figs.phone.c2{grid-template-columns:repeat(2,1fr)}
+  .contact{padding:28px 22px}
+  .pager{grid-template-columns:1fr}
+  .pager .next{grid-column:1}
+  section.block{padding:48px 0}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#/">Sienna Aylaian</a>
+    <nav class="main">
+      <a href="#/work">Work</a>
+      <a href="#/experience" class="hide-sm">Experience</a>
+      <a href="#/about" class="hide-sm">About</a>
+      <a href="assets/62307bdded9d6a15.pdf" target="_blank" rel="noopener">Résumé</a>
+      <a href="#/contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Sienna Aylaian</span>
+    <span>Hanover, NH · San Francisco Bay Area</span>
+  </div>
+</footer>
+
+<div class="lb" id="lb"><img alt=""></div>
+
+<script>
+const EMAIL = 'sienna.aylaian@gmail.com';
+const LINKEDIN = 'https://www.linkedin.com/in/sienna-aylaian-b21998273/';
+const RESUME = 'assets/sienna-aylaian-resume-pm.pdf';
+const A = f => 'assets/' + f;
+
+/* Case studies. Block types: h, p, ul, quote, metrics, table, figs */
+const PROJECTS = [
+{
+  id:'lavahire', group:'product',
+  org:'LavaHire · Summer 2026',
+  title:'Taking a recruiting platform from empty repo to production',
+  summary:'Founding product designer on a two-person team. I scoped, designed, and built a hiring platform end to end in 10 weeks.',
+  cover:A('777bab45006ee52f.png'),
+  tags:['0→1','Discovery','Execution','Full-stack'],
+  result:[['5+','features shipped end to end'],['111','automated tests passing'],['10 wks','empty repo to live MVP']],
+  facts:{Role:'Founding Product Designer (design, roadmap, strategy)', Team:'2 (with founder Mike Pope)', Timeline:'May – Aug 2026, remote', Tools:'Figma, FigJam, Claude Code, Next.js, Supabase'},
+  tldr:{
+    Problem:'A contract recruiter had spent years trying to build his own hiring software and needed someone to give the product shape and ship it.',
+    Approach:'Ran discovery in FigJam, framed one guiding problem around fair screening, wireframed every flow, then built and shipped it in Next.js and Supabase.',
+    Outcome:'Live production MVP with 5+ features, including an AI-integrated two-stage questionnaire, plus a Figma design system and spec docs that kept scope aligned with delivery.'
+  },
+  links:[['Try the live demo','https://lavahire-demo.vercel.app/login']],
+  body:[
+    {t:'h',x:'Context'},
+    {t:'p',x:'LavaHire is recruiting software founded by Mike Pope, a contract recruiter. I joined when the repository was still empty and worked with Mike fully remote across an 11-hour time difference. I owned the product from research through production.'},
+    {t:'h',x:'Discovery and problem framing'},
+    {t:'p',x:'Before designing any screens, I ran an empathize-and-define pass in FigJam:'},
+    {t:'ul',x:['<strong>Stakeholder mapping</strong> across recruiters, candidates, and legal.','<strong>Competitive audit</strong> of LinkedIn, Handshake, and Indeed application flows.','<strong>Secondary research</strong> on bias in hiring.']},
+    {t:'p',x:'One finding became the guiding constraint for the product: visa sponsorship questions are a real business need, but when asked poorly they become a proxy for bias against foreign-sounding names.'},
+    {t:'quote',x:'How might we screen for a real constraint without inviting a hidden judgment call?',c:'Problem statement that guided feature decisions'},
+    {t:'figs',items:[[A('1a9b3e7435b0acca.png'),'Stakeholder map from the FigJam discovery board.']]},
+    {t:'h',x:'Scope and delivery'},
+    {t:'p',x:'I sequenced the work so the riskiest decisions were settled before code: grayscale wireframes for every flow, then the build, with visual identity applied last once the flows were stable.'},
+    {t:'table',head:['Feature','What it does'],rows:[
+      ['Job posting flow','Four-step wizard with plain-language copy; the entry point for every recruiter.'],
+      ['Apply experience','Resume upload and application handling for every candidate.'],
+      ['Screening questionnaires','The largest feature. Grew into an AI-integrated, two-stage flow with its own invite emails.'],
+      ['Candidate FAQ','Applicant questions answered directly by the recruiter.'],
+      ['Review dashboard','Staff view for reviewing candidates; design started, more planned.']
+    ]},
+    {t:'figs',cols:2,items:[[A('eb8105cbe1a44e48.png'),'Wireframe: job posting wizard.'],[A('69b676a4190bd209.png'),'Wireframe: recruiter empty state.'],[A('0e69bd571bb9e3ca.png'),'Wireframe: questionnaire builder.'],[A('5875eb67c3508cbf.png'),'Wireframe: public candidate FAQ.']]},
+    {t:'figs',cols:2,items:[[A('777bab45006ee52f.png'),'Production: public apply page.'],[A('22f94fae3863fe65.png'),'Production: careers site.']]},
+    {t:'h',x:'Keeping scope and delivery aligned'},
+    {t:'p',x:'As the only designer and the primary builder, I documented decisions so the founder and I stayed aligned on what we were shipping and why.'},
+    {t:'ul',x:['<strong>Written product specs</strong> for each feature before implementation.','<strong>Flow diagrams and decision logs</strong> recording trade-offs and what was deferred.','<strong>A Figma design system</strong> with color tokens, light/dark theming, and typography, so new screens stayed consistent as scope grew.']},
+    {t:'h',x:'Results'},
+    {t:'metrics',items:[['95','commits shipped to production'],['~9,000','lines of TypeScript / React'],['111','automated tests, all passing'],['10','weeks, part-time and remote']]},
+    {t:'quote',x:'I have been trying to build some version of a recruiting software application on my own for more than ten years. Working with Sienna gave the project the focus it had always lacked.',c:'Mike Pope, Founder, LavaHire'},
+    {t:'h',x:'What I took away'},
+    {t:'p',x:'Owning both the product decisions and the build made trade-offs concrete: every feature had a real cost in time, so scoping and sequencing mattered as much as the design itself.'}
+  ]
+},
+{
+  id:'reimagining-drill', group:'product',
+  org:'Design Initiative at Dartmouth · Spanish & Portuguese Dept · 2025',
+  title:'Piloting a mentorship program the department adopted',
+  summary:'Led research and ran two live pilots to address retention among the department’s 32 peer drill instructors.',
+  cover:A('af7b23b5845c30a0.jpg'),
+  tags:['Discovery','Experimentation','Stakeholders'],
+  result:[['60+','students per term in adopted program'],['30+','interviews synthesized'],['100%','of pilot participants would return']],
+  facts:{Role:'Research lead + prototyping', Team:'4-person team + faculty partner', Timeline:'10 weeks', Methods:'Interviews, surveys, live pilots'},
+  tldr:{
+    Problem:'Experienced drill instructors were disengaging: they re-tried out and re-trained every term and felt little recognition or connection.',
+    Approach:'Synthesized 30+ interviews and survey data, then tested peer mentorship as a live program over two iterated pilot rounds.',
+    Outcome:'Mentorship model adopted department-wide, serving 60+ students per term, alongside curriculum changes reaching 300+ students annually.'
+  },
+  links:[['View the full deck','https://docs.google.com/presentation/d/1ryaUmndq_-8o8F9q9Ni3pXB7dsOZJ4JowTgMRKbU']],
+  body:[
+    {t:'h',x:'Context'},
+    {t:'p',x:'Dartmouth’s Spanish & Portuguese Department runs “drill,” small peer-led language practice sections taught by about 32 student instructors. Every term, every instructor re-tries out and re-trains from scratch, regardless of experience. Our faculty partner, Roberto, brought us in to understand why instructors were checking out.'},
+    {t:'h',x:'Problem statement'},
+    {t:'quote',x:'Drill instructors need to feel valued and supported by the department, but the reapplication process and lack of recognition hurt their sense of belonging and development.',c:'Defined from interviews with instructors like “Alex,” a veteran instructor since freshman year'},
+    {t:'h',x:'My role'},
+    {t:'ul',x:['<strong>Stakeholder management:</strong> met with our partner weekly to share findings and gauge what the department could realistically support.','<strong>Research synthesis:</strong> turned interview notes, training observations, and survey data into findings the team could design against.','<strong>Pilot operations:</strong> recruited the first mentor and wrote the participant agreement.','<strong>Iteration:</strong> redesigned round two based on round-one results.']},
+    {t:'h',x:'Key insights'},
+    {t:'metrics',items:[['30+','student interviews synthesized'],['65%','of instructors lacked relationships with peers outside training'],['5 hrs','of first-week training cited as the #1 reason not to reapply'],['2','live pilot rounds']]},
+    {t:'quote',x:'Returning instructors know how drill is; faculty just understands it as a concept.',c:'Instructor interview'},
+    {t:'h',x:'Experiments'},
+    {t:'p',x:'We tested peer mentorship as a real, running program rather than a mockup, recruiting actual mentors and mentees and tracking check-ins.'},
+    {t:'table',head:['Round','Setup','Worked','Didn’t'],rows:[
+      ['Round 1','Full term · 1 mentor : 4 mentees','Low-commitment check-ins were easy to sustain.','Larger group was hard to schedule; mentor role was unclear, so check-ins were never sent.'],
+      ['Round 2','2 weeks · 1 mentor : 2 mentees','Easier coordination; mentor was fully engaged and understood the role.','Conversation stalled when one person went quiet.']
+    ]},
+    {t:'p',x:'<strong>Learning:</strong> group size was not the real variable. What mattered was whether the mentor clearly understood their role, so the recommendation focused on defining expectations.'},
+    {t:'h',x:'Recommendation'},
+    {t:'ul',x:['<strong>Mentor expectations:</strong> check-ins a few times a week over text, plus two in-person meetups per term.','<strong>Selection:</strong> mentors apply at the start of term; new instructors are auto-enrolled as mentees.','<strong>Tryouts:</strong> new instructors keep full training; experienced instructors attend one refresher and mentor instead.']},
+    {t:'h',x:'Results'},
+    {t:'p',x:'The department adopted the mentorship model and the tryout restructure for the following term, launching a program serving 60+ students. In the post-pilot survey:'},
+    {t:'metrics',items:[['100%','said their group interacted enough'],['100%','would do it again next term'],['100%','know who to ask for help'],['100%','want to keep teaching drill']]},
+    {t:'figs',items:[[A('7a026dfdfdb6b1db.jpg'),'Post-pilot survey results (5-point scale).']]}
+  ]
+},
+{
+  id:'evergreen', group:'product',
+  org:'DALI Lab · Evergreen · 2026',
+  title:'Turning personal wellness data into insights students can act on',
+  summary:'Product designer on Dartmouth’s AI wellness platform, owning the insights dashboard, goal-setting onboarding, and end-of-term recap.',
+  cover:A('b3ae3b36d12968ef.jpg'),
+  tags:['Data product','AI','Client delivery'],
+  result:[['600+','students on the platform'],['3 of 4','workstreams client-approved'],['3','features owned end to end']],
+  facts:{Role:'Product Designer (strategy & roadmap)', Team:'DALI Lab, Evergreen', Timeline:'Jun 2026 – present', Tools:'Figma'},
+  tldr:{
+    Problem:'Evergreen collects sleep, steps, mood, screen time, spending, and academic data, but raw numbers don’t tell a student whether they’re doing well.',
+    Approach:'Structured insights into daily, weekly, and termly views with consistent metrics, paired with a goals onboarding flow and an end-of-term recap.',
+    Outcome:'Goals onboarding and recap finalized; cross-insights approved by partner and student vote; daily/weekly dashboard in iteration.'
+  },
+  links:[],
+  body:[
+    {t:'h',x:'Context'},
+    {t:'p',x:'Evergreen is Dartmouth’s AI-powered student wellness platform, built by students through the DALI Lab and serving 600+ users. It pairs a conversational chatbot, Evie, with insight tools that help students reflect on their term. I presented work to Evergreen leadership in weekly client meetings across a 10-week sprint.'},
+    {t:'h',x:'Problem'},
+    {t:'p',x:'The challenge was not the data but its presentation. We needed to surface meaningful patterns without turning the app into a dashboard of anxiety-inducing metrics.'},
+    {t:'p',x:'<strong>Constraints</strong>'},
+    {t:'ul',x:['A student team working within a design system inherited from the previous term.','Continuity with a chatbot and prototypes a prior team had already shipped.','A slow feedback loop split between team meetings and separate client check-ins.']},
+    {t:'h',x:'Feature 1 · Termly goals and onboarding'},
+    {t:'p',x:'Students choose a focus for the term, which expands into weekly and daily checklist items. This gives the insights that follow a goal to measure against.'},
+    {t:'figs',cols:2,phone:true,items:[[A('6998bd2e8189ac58.png'),'Choosing a study–rest balance focus.'],[A('bdcb7cb0569411e0.png'),'The same screen with “staying connected” selected.']]},
+    {t:'h',x:'Feature 2 · Insights dashboard'},
+    {t:'p',x:'I split the dashboard into daily, weekly, and termly views, each with its own visual language, while keeping the underlying metrics consistent across all three. The same structure extends to location and dining data.'},
+    {t:'figs',cols:3,phone:true,items:[[A('2b1c75832f5eab22.png'),'Termly cross-insights: several metrics on one graph with an auto-generated insight.'],[A('6737991ebdddd55c.png'),'Daily view: steps, activity, sleep, and photo widgets.'],[A('eaba4ef4b02c5d7d.png'),'Edit mode: students customize which widgets appear.']]},
+    {t:'figs',cols:3,items:[[A('27028b36d080fe95.png'),'Daily map of a student’s route across campus.'],[A('2520705a776f7e11.png'),'Termly heatmap of most-visited places.'],[A('d8e20cabb86b5fe5.png'),'Dining balance with pacing advice for the rest of term.']]},
+    {t:'h',x:'Feature 3 · Termly recap'},
+    {t:'p',x:'To close the loop at the end of term, I designed a story-format recap students tap through, giving them a reason to return and reflect.'},
+    {t:'figs',cols:4,phone:true,items:[[A('ffdca75cd97b8f9d.png'),'Title card'],[A('a241d4c67bca0b05.png'),'Activity with Evie'],[A('c839ef0b7cfabddb.png'),'Longest “happy” streak'],[A('477a9f4f9083c7ed.png'),'Most active day']]},
+    {t:'h',x:'Status'},
+    {t:'table',head:['Workstream','Status'],rows:[
+      ['Termly goals and onboarding','Finalized; approved and ready for implementation.'],
+      ['Termly recap','Finalized; working prototype in progress.'],
+      ['Termly and weekly cross-insights','Approved by partner and student vote.'],
+      ['Daily and weekly dashboard','In progress; another pass to align with the design system.']
+    ]}
+  ]
+},
+{
+  id:'id8', group:'product',
+  org:'Dartmouth UI/UX course · March 2026',
+  title:'id8: validating a reflection-first social product',
+  summary:'Three-person team project taking a broad brief through research, concept selection, and usability testing in three weeks.',
+  cover:A('6822ae4ef1d44a17.png'), coverContain:true,
+  tags:['User research','Ideation','Usability testing'],
+  result:[['4.5/5','likelihood to use'],['4.4/5','intuitiveness score'],['24','concepts narrowed to 1']],
+  facts:{Role:'Product designer (profile flows)', Team:'3 (with Batu Saridede, Liliana Ciraulo)', Timeline:'3-week sprint', Tools:'Figma'},
+  tldr:{
+    Problem:'Interviewees wanted honest, spontaneous connection, but most digital spaces reward polished, performative posting.',
+    Approach:'Interviews and affinity mapping, 24 concepts from a Crazy 8’s sprint, then low-fi to high-fi with mentor critique and usability tests.',
+    Outcome:'Scored 4.4/5 on intuitiveness and 4.5/5 on likelihood to use; named a “staff favorite” by the professor.'
+  },
+  links:[['Interactive prototype','https://www.figma.com/proto/0wTv0Ab2cPijzO8HATBmF8/Final-Project--10A--Batu--Lil'],['Figma file','https://www.figma.com/design/0wTv0Ab2cPijzO8HATBmF8/Final-Project--10A--Batu--Li']],
+  body:[
+    {t:'h',x:'Brief'},
+    {t:'p',x:'Bridge the gap between people of different generations, cultures, languages, and beliefs.'},
+    {t:'h',x:'Discovery'},
+    {t:'p',x:'User interviews kept surfacing the same tension: people want honest, spontaneous connection, but social platforms reward the opposite.'},
+    {t:'table',head:['Theme','Findings'],rows:[
+      ['Needs','Honesty and openness; belonging; less nervousness about taking the first step.'],
+      ['Frustrations','Performative, superficial social media; over-scheduled lives; only outgoing personalities feel “rewarded.”'],
+      ['Goals','Spontaneity; genuine connection over shallow chats; familiarity and comfort.']
+    ]},
+    {t:'quote',x:'How do we get people to connect without the superficiality and shallowness of the real world?',c:'Interviewee, 21'},
+    {t:'h',x:'Concept selection'},
+    {t:'p',x:'A Crazy 8’s sprint produced 24 concepts. We converged on an anonymous, reflection-first platform built around one core action: capture a thought, choose whether to keep it private or share it, and see what others are thinking.'},
+    {t:'p',x:'<strong>Process:</strong> interviews → affinity themes → 24 concepts → low-fi wireframes → monochrome mid-fi → visual identity last.'},
+    {t:'figs',cols:4,phone:true,items:[[A('e4d561a54ab705ca.png'),'Mid-fi: ideas feed.'],[A('2805deb43f78c2c1.png'),'Mid-fi: user space.'],[A('2f93e3f03a5c669c.png'),'Mid-fi: custom profile picture.'],[A('f02838e5db107688.png'),'Mid-fi: custom font.']]},
+    {t:'h',x:'Iteration'},
+    {t:'ul',x:['Each designer iterated on their own section, then the team consolidated to fix style inconsistencies and flow confusion.','Critique from the professor and TAs targeted friction points before color was applied.','Consolidated “saved” and “collections” into the profile only, standardized buttons, and removed clutter.']},
+    {t:'figs',cols:3,phone:true,items:[[A('6822ae4ef1d44a17.png'),'Map: ideas pinned where they were written.'],[A('d9779ed5ee850634.png'),'Ideas stream: save thoughts that stand out.'],[A('be4a9b207e2db589.png'),'User space: a personal board of reflections.']]},
+    {t:'h',x:'Validation'},
+    {t:'p',x:'We ran open-ended usability tests with 18–22 year-olds.'},
+    {t:'metrics',items:[['4.4 / 5','felt intuitive and smooth to navigate'],['4.5 / 5','likelihood to use'],['24','concepts generated'],['3','weeks, brief to tested prototype']]},
+    {t:'h',x:'Next steps'},
+    {t:'p',x:'With more time, we would study how users move between id8 and existing social platforms and run additional rounds of usability testing.'}
+  ]
+},
+{
+  id:'dali-closet', group:'product',
+  org:'DALI Lab application challenge · January 2025',
+  title:'Campus closet exchange: one week from prompt to prototype',
+  summary:'Solo challenge: identify a community gap, define the problem, prioritize features, and deliver an interactive prototype in seven days.',
+  cover:A('c7b055547aaf96bb.png'), coverContain:true,
+  tags:['Prioritization','Competitive analysis','Solo'],
+  result:[['1 week','prompt to interactive prototype'],['4','must-have features scoped'],['~30%','DALI acceptance rate; accepted']],
+  facts:{Role:'Solo: research, product, design', Team:'Individual', Timeline:'1 week', Tools:'Figma, FigJam'},
+  tldr:{
+    Problem:'Students buy clothing for one-off events while closets down the hall sit unused, adding cost and social pressure.',
+    Approach:'User conversations and a competitive audit of Depop, Mercari, and Poshmark, then a tiered feature prioritization before any design.',
+    Outcome:'A full interactive prototype covering search, filtering, listings, and trust mechanics. Earned acceptance to DALI Lab.'
+  },
+  links:[['Interactive prototype','https://www.figma.com/proto/g4MKCZq1xHB7k9bbpGKroc/DALI-UI?node-id=1-697&p=f&t=J'],['Research board','https://www.figma.com/board/0ldzW75u5UHFdZa6ZEgRW8/DALI-UX---Sienna?node-id=0-1&']],
+  body:[
+    {t:'h',x:'Prompt'},
+    {t:'quote',x:'Identify a gap that exists between seeking and finding community in everyday life, and design a solution to help bring people together.',c:'DALI Lab UI/UX Design Challenge brief'},
+    {t:'h',x:'Users and problem'},
+    {t:'ul',x:['<strong>Primary:</strong> students who want affordable, event-appropriate clothing for a specific occasion.','<strong>Secondary:</strong> students with unused clothing who want to earn from it or connect with their community.']},
+    {t:'quote',x:'How might we transform underused clothing on campus into a shared resource that reduces financial and social barriers and helps students feel confident at events?',c:'Problem statement'},
+    {t:'h',x:'Prioritization'},
+    {t:'p',x:'I sorted every feature idea into tiers before sketching, so the one-week build focused on what the core use case required.'},
+    {t:'table',head:['Tier','Features'],rows:[
+      ['Must have','Event-based search; location tags by dorm cluster; Dartmouth-only access; discounted term-long rentals.'],
+      ['Nice to have','A “looks” tab showing how pieces are styled; community vouches for higher-stakes items.'],
+      ['Stretch','Cost-per-wear and environmental impact dashboard; natural-language AI search.']
+    ]},
+    {t:'h',x:'Solution'},
+    {t:'figs',cols:4,phone:true,items:[[A('c7b055547aaf96bb.png'),'Home and search, with an assistant for undecided users.'],[A('e4f4ca9c6dcd9447.png'),'Filter overlay.'],[A('3e53a79ba9a3420a.png'),'Results show rent and buy side by side.'],[A('cf9cc8e14a1bc516.png'),'Seller profile, addressing the trust gap from interviews.']]},
+    {t:'h',x:'Outcome'},
+    {t:'p',x:'In one week I went from a single-word prompt to a research-backed problem statement, a prioritized feature set, and a full interactive prototype. I was accepted to DALI Lab and have worked there since.'}
+  ]
+},
+{
+  id:'parkinsons-aesthetics', group:'research',
+  org:'Dartmouth Empower Lab · 2025',
+  title:'Survey research informing the design of a new Parkinson’s center',
+  summary:'Designed and analyzed a 60-person preference study to give a new care center evidence-based design recommendations.',
+  cover:A('ae748c27d330eb83.jpg'),
+  tags:['Survey design','R','Recommendations'],
+  result:[['60','respondents surveyed'],['21','designs tested'],['1,000+','patients the center will serve']],
+  facts:{Role:'Research & visual design', Team:'With Hannah Dorris, Prof. Elizabeth Murnane', Timeline:'Jan – Jun 2025', Tools:'Qualtrics, R, Photoshop, CSS'},
+  tldr:{
+    Problem:'Literature linked yellow and biophilic design to calm, but none of it had been tested with Parkinson’s patients specifically.',
+    Approach:'Mocked up 21 room and floor-marking designs, surveyed 60 respondents in a custom Qualtrics survey, and analyzed results in R.',
+    Outcome:'Design specs for a New York center serving 1,000+ patients: yellow or blue palettes with greenery, black arrow wayfinding, and handrails.'
+  },
+  links:[],
+  body:[
+    {t:'h',x:'Method'},
+    {t:'table',head:['Step','What I did'],rows:[
+      ['Review','Literature on how color and biophilic design affect mood and comfort.'],
+      ['Visualize','21 room and floor-marking mockups, built after teaching myself Photoshop.'],
+      ['Survey','Qualtrics survey with custom CSS; respondents rated each design 0–5.'],
+      ['Analyze','t-tests, ANOVA, and Shapiro-Wilk normality checks in R.']
+    ]},
+    {t:'metrics',items:[['60','respondents'],['55%','patients (33)'],['34%','caretakers (20)'],['21','designs tested']]},
+    {t:'h',x:'Findings'},
+    {t:'p',x:'Across every space tested, yellow, biophilic, and arrow-based designs ranked highest, and patients’ preferences were consistent with the broader sample.'},
+    {t:'table',head:['Space','Top design','Mean ± SD'],rows:[
+      ['Floor markings','Black arrow','3.08 ± 1.61'],
+      ['Reception room','Yellow biophilic','3.32 ± 1.28'],
+      ['Studio room','Yellow','3.43 ± 1.04'],
+      ['Evaluation room','Yellow biophilic','3.32 ± 1.28']
+    ]},
+    {t:'figs',cols:3,items:[[A('6e66177a040b4e85.jpg'),'Hallway with black arrow floor markings.'],[A('7138248c4fe0d838.jpg'),'Yellow studio room.'],[A('f54798e271a5bdea.jpg'),'Evaluation room variant.']]},
+    {t:'h',x:'Recommendations'},
+    {t:'ul',x:['Use greenery with a yellow or blue color scheme to make patients feel most welcome.','Use black arrow floor markings for wayfinding.','Add handrails or grab bars, which both patients and caretakers requested.']}
+  ]
+},
+{
+  id:'thai-bl', group:'research',
+  org:'Dartmouth MATH 30.04 · Spring 2025',
+  title:'Modeling market dynamics in Thailand’s BL media industry',
+  summary:'Used evolutionary game theory to find the market conditions under which authentic storytelling becomes commercially viable.',
+  cover:A('34bcf3b51a540759.jpg'),
+  tags:['Market modeling','Strategy','Quantitative'],
+  result:[['0.38','tipping point found'],['10','series sampled'],['92 / 8','audience split modeled']],
+  facts:{Role:'Model derivation, data, presentation', Team:'4', Timeline:'Spring 2025', Methods:'Replicator dynamics, GeoGebra'},
+  tldr:{
+    Problem:'Studios choose between mass-appeal fantasy and authentic queer storytelling. Which strategy wins over time, and what would change that?',
+    Approach:'Modeled the choice as a two-audience replicator game and set parameters from engagement data on ten real series.',
+    Outcome:'Identified a hard threshold in audience “care” below which authentic content cannot win, regardless of quality.'
+  },
+  links:[['Poster (PDF)',A('5b042684537988be.pdf')],['Full paper (PDF)',A('6953864a6365ed93.pdf')]],
+  body:[
+    {t:'h',x:'Question'},
+    {t:'p',x:'Thailand’s Boys’ Love (BL) industry is growing about 17% a year, with two audiences that want different things: a large mainstream audience that favors escapist fantasy, and a smaller LGBTQ+ audience that wants authentic representation. Which strategy dominates, and what would have to change for authenticity to be commercially sustainable?'},
+    {t:'h',x:'Approach'},
+    {t:'ul',x:['Modeled authentic vs. fantasy content as a replicator equation with reputation-weighted payoffs across two audience segments (8% / 92%).','Sampled ten prominent series from 2020–2024 and pulled engagement data from Reddit, MyDramaList, and X to set initial parameters.','Introduced a “care factor” γ for how much the majority audience values authenticity, and simulated across its range.']},
+    {t:'h',x:'Findings'},
+    {t:'metrics',items:[['0.38','care-factor threshold for authenticity to win'],['92%','audience share that dominates the outcome'],['10','series sampled'],['>90%','LGBTQ+ support for authentic content, still outweighed']]},
+    {t:'figs',cols:2,items:[[A('8366048436aaf6ad.png'),'Baseline (γ = 0.1): fantasy’s payoff stays ahead across the domain.'],[A('701ddbf946c755b2.png'),'Crossover at γ = 0.38.']]},
+    {t:'p',x:'<strong>Implication:</strong> because payoffs are population-weighted, shifting the majority audience’s preferences matters more than deepening support in the niche. Below the threshold, authentic content is structurally disadvantaged no matter its quality.'},
+    {t:'h',x:'Limitations'},
+    {t:'ul',x:['A static snapshot showing direction, not a timeline.','Ten series, categorized by our team’s judgment.','The baseline care factor rests on a single national study.']}
+  ]
+}
+];
+
+const EXPERIENCE = [
+  {when:'Jan – Mar 2027', role:'Incoming Commercial Intern', org:'U.S. Embassy Lima · U.S. Department of Commerce', pts:['Will join client meetings with U.S. companies entering Peru, capturing requirements and translating them into research briefs for commercial specialists.','Will conduct market, competitive, stakeholder, and user research across mining, energy, and aerospace.']},
+  {when:'Jun 2026 – Present', role:'Product Designer', org:'DALI Lab · Evergreen', pts:['Drive product strategy and roadmap for Evergreen, an AI wellness platform serving 600+ Dartmouth students.','Design data-visualization dashboards that translate student health metrics into product decisions.','Present deliverables to Evergreen leadership in weekly client meetings, scoping and iterating.']},
+  {when:'May – Aug 2026', role:'Founding Product Designer', org:'LavaHire', pts:['Built from an empty repo to a live production MVP, owning design, product roadmap, and product strategy.','Designed and shipped 5+ full-stack features from Figma wireframes and written specs through implementation, including an AI-integrated two-stage questionnaire system.','Established the Figma design system (color tokens, light/dark theming, typography) and authored spec docs (flow diagrams, decision logs) aligning scope with engineering delivery.']},
+  {when:'Jan 2026 – Present', role:'Social Impact Nonprofit Consultant', org:'Assistive Technology New Hampshire (UNH Institute on Disability)', pts:['Designed an inclusive, youth-centered accessibility challenge for an organization serving 2,800+ individuals annually.','Produced a 25-page client-ready report on outreach strategy, user research, and implementation recommendations.']},
+  {when:'Sep 2025 – Present', role:'Design Consultant Analyst', org:'Design Initiative at Dartmouth', pts:['Drove curriculum changes for the Spanish & Portuguese Department, reaching 300+ students annually.','Synthesized 30+ student interviews into a mentorship program adopted department-wide, serving 60+ students per term.']},
+  {when:'Nov – Dec 2025', role:'Intern', org:'StreetCode Academy', pts:['Worked cross-functionally with executives at a tech education nonprofit serving 5,000+ students per year.','Designed and built a webpage on AI awareness; helped distribute 200 free computers to families.']},
+  {when:'Jan – Jun 2025', role:'Research Intern', org:'Women in Science Project · Dartmouth Empower Lab', pts:['Built custom Qualtrics surveys (HTML/CSS) capturing 40+ patient responses.','Applied ANOVA in R to patient-preference data to inform design specs for a Parkinson’s center in New York serving 1,000+ patients.']},
+  {when:'Sep 2021 – Present', role:'State Data Analyst & Lead Programs Coordinator', org:'AAUW Tech Trek', pts:['Direct California data strategy for a statewide STEM initiative reaching 10,000+ students annually.','Built a 16,000-record alumnae database in Python and Caspio, replacing manual tracking across branches.','Designed and taught STEM curriculum to 250+ students across 4 campuses.']}
+];
+
+const esc = s => String(s);
+const $app = document.getElementById('app');
+
+function card(p){
+  return `<a class="card" href="#/work/${p.id}">
+    <div class="thumb${p.coverContain?' contain':''}"><img src="${p.cover}" alt="" loading="lazy"></div>
+    <div class="body">
+      <div class="org">${p.org}</div>
+      <h3>${p.title}</h3>
+      <p>${p.summary}</p>
+      <div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      <div class="result">${p.result.map(([v,l])=>`<div><strong>${v}</strong>${l}</div>`).join('')}</div>
+    </div></a>`;
+}
+
+function metrics(items){
+  return `<div class="metrics">${items.map(([b,s])=>`<div class="metric"><b>${b}</b><span>${s}</span></div>`).join('')}</div>`;
+}
+
+function home(){
+  const prod = PROJECTS.filter(p=>p.group==='product');
+  const res = PROJECTS.filter(p=>p.group==='research');
+  return `
+  <div class="hero-bg">
+  <span class="ornament o1"></span><span class="ornament o2"></span>
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <h1>I turn ambiguous problems into clear product decisions.</h1>
+        <p class="lede">Quantitative Social Science at Dartmouth (’28), with minors in Human-Centered Design and Spanish. I’ve taken a product from empty repo to production, run research that changed a department’s policy, and set roadmap for an AI platform used by 600+ students. Incoming Commercial Intern at the U.S. Embassy in Lima (Jan 2027).</p>
+        <div class="ctas">
+          <a class="btn primary" href="#/work">View case studies</a>
+          <a class="btn" href="${RESUME}" target="_blank" rel="noopener">Download résumé</a>
+        </div>
+      </div>
+      <div class="portrait-wrap"><span class="ornament o3"></span><div class="portrait"><img src="${A('1a35ee55e937e613.jpg')}" alt="Sienna Aylaian"></div></div>
+    </section>
+  </div>
+  </div>
+  <div class="wrap">
+    ${metrics([
+      ['5+ features','Shipped to a production MVP at LavaHire in 10 weeks: 95 commits, 111 tests, built from an empty repo'],
+      ['60+ / term','Students served by a mentorship program adopted department-wide, built from 30+ interviews and 2 pilots'],
+      ['600+','Dartmouth students on Evergreen, the AI wellness platform whose roadmap I help drive at DALI'],
+      ['10,000+','Students reached annually by the statewide STEM program whose California data strategy I direct']
+    ])}
+  </div>
+
+  <section class="block" id="work" style="margin-top:64px">
+    <div class="wrap">
+      <div class="sec-head"><div><h2>Case studies</h2><p>Problem, approach, and outcome for each project.</p></div></div>
+      <div class="subhead">Product</div>
+      <div class="cards">${prod.map(card).join('')}</div>
+      <div class="subhead">Research &amp; analytics</div>
+      <div class="cards">${res.map(card).join('')}</div>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="wrap">
+      <div class="sec-head"><div><h2>Experience</h2></div><a class="btn" href="${RESUME}" target="_blank" rel="noopener">Full résumé (PDF)</a></div>
+      <div class="exp">${EXPERIENCE.map(e=>`
+        <div class="exp-row">
+          <div class="exp-when">${e.when}</div>
+          <div><h3>${e.role}</h3><div class="org">${e.org}</div>
+          <ul>${e.pts.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+        </div>`).join('')}</div>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="sec-head"><div><h2>About</h2></div></div>
+      <div class="about">
+        <div>
+          <p>I’m a junior at Dartmouth studying Quantitative Social Science with a concentration in behavioral economics. I care about the numbers and the people behind them, and product work is where those meet.</p>
+          <p>My projects usually start with an undefined problem: why instructors are disengaging, how to make personal data meaningful, how to screen candidates fairly. I start with research, define the problem precisely, prioritize ruthlessly, and test with real users before scaling.</p>
+          <p>Outside of product work, I co-founded a higher-education fund for girls that has raised $10,000+, relaunched Dartmouth’s Filipino Club with 40+ founding members, and am a Tuck Pathfinders participant.</p>
+        </div>
+        <div class="skills">
+          <div><h3>Product</h3><div class="tags">${['Product strategy','Roadmapping','Product specs','User interviews','Feature prioritization','Usability testing','Pilot design','Stakeholder management','Market & competitive research'].map(t=>`<span class="tag">${t}</span>`).join('')}</div></div>
+          <div><h3>Data &amp; analysis</h3><div class="tags">${['R','Python','Qualtrics','Survey design','ANOVA / t-tests','Data visualization'].map(t=>`<span class="tag">${t}</span>`).join('')}</div></div>
+          <div><h3>Design &amp; build</h3><div class="tags">${['Figma','FigJam','Next.js','Supabase','Git','Claude Code'].map(t=>`<span class="tag">${t}</span>`).join('')}</div></div>
+          <div><h3>Languages</h3><div class="tags"><span class="tag">English (native)</span><span class="tag">Spanish (proficient)</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <span class="ornament o4"></span>
+        <div><h2>Let’s talk</h2><p>Happy to talk product, research, or anything on this site.</p></div>
+        <div class="ctas" style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn primary" href="mailto:${EMAIL}">${EMAIL}</a>
+          <a class="btn" href="${LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function block(b){
+  switch(b.t){
+    case 'h': return `<h2>${b.x}</h2>`;
+    case 'p': return `<p>${b.x}</p>`;
+    case 'ul': return `<ul>${b.x.map(i=>`<li>${i}</li>`).join('')}</ul>`;
+    case 'quote': return `<blockquote>“${b.x}”${b.c?`<cite>${b.c}</cite>`:''}</blockquote>`;
+    case 'metrics': return metrics(b.items);
+    case 'table': return `<table class="table"><thead><tr>${b.head.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${b.rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+    case 'figs': return `<div class="figs c${b.cols||1}${b.phone?' phone':''}">${b.items.map(([src,cap])=>`<figure><div class="frame"><img src="${src}" alt="${cap}" loading="lazy"></div><figcaption>${cap}</figcaption></figure>`).join('')}</div>`;
+  }
+  return '';
+}
+
+function study(p){
+  const i = PROJECTS.indexOf(p), prev = PROJECTS[i-1], next = PROJECTS[i+1];
+  return `<div class="cs-top"><span class="ornament o5"></span><div class="wrap" style="position:relative">
+    <a class="cs-back" href="#/work">← All case studies</a>
+    <div class="cs-head">
+      <div class="eyebrow">${p.org}</div>
+      <h1>${p.title}</h1>
+      <p>${p.summary}</p>
+    </div></div></div>
+  <div class="wrap">
+    <dl class="facts">${Object.entries(p.facts).map(([k,v])=>`<div class="fact"><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
+    <div class="tldr">${Object.entries(p.tldr).map(([k,v])=>`<div><h3>${k}</h3><p>${v}</p></div>`).join('')}</div>
+    ${p.links.length?`<div class="cs-links">${p.links.map(([l,u],j)=>`<a class="btn${j?'':' primary'}" href="${u}" target="_blank" rel="noopener">${l} ↗</a>`).join('')}</div>`:''}
+    <article class="cs-body">${p.body.map(block).join('')}</article>
+    <nav class="pager">
+      ${prev?`<a href="#/work/${prev.id}"><small>Previous</small>${prev.title}</a>`:''}
+      ${next?`<a class="next" href="#/work/${next.id}"><small>Next</small>${next.title}</a>`:''}
+    </nav>
+  </div>`;
+}
+
+let lastView = '';
+function route(){
+  const h = location.hash.replace(/^#\/?/,'');
+  const m = h.match(/^work\/(.+)$/);
+  const p = m && PROJECTS.find(x=>x.id===m[1]);
+  if(p){
+    $app.innerHTML = study(p); lastView = 'study';
+    document.title = p.title + ' · Sienna Aylaian';
+    window.scrollTo(0,0);
+    return;
+  }
+  if(lastView!=='home'){ $app.innerHTML = home(); lastView = 'home'; }
+  document.title = 'Sienna Aylaian · Product';
+  const target = h && document.getElementById(h);
+  if(target) target.scrollIntoView(); else window.scrollTo(0,0);
+}
+window.addEventListener('hashchange', route);
+route();
+
+const lb = document.getElementById('lb');
+document.addEventListener('click', e=>{
+  const img = e.target.closest('figure img');
+  if(img){ lb.firstElementChild.src = img.src; lb.classList.add('on'); }
+  else if(e.target.closest('#lb')) lb.classList.remove('on');
+});
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') lb.classList.remove('on'); });
+</script>
+</body>
+</html>
